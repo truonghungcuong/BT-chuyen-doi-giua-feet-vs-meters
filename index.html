@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<select id="luachon">
+    <option value="1">feet->meters</option>
+    <option value="2">meters->feet</option>
+</select>
+<input type="number" onchange="showKetqua()" oninput="showKetqua()" id="giatri1" placeholder="Giá trị chuyển đổi">
+<p id="ketqua"></p>
+<script>
+    function footToMeter(number){
+       meter = 0.305 * number;
+        return meter
+    }
+    function meterToFoot(number){
+        foot = 3.279 * number;
+        return foot
+    }
+    function showKetqua(){
+        let number=document.getElementById("giatri1").value;
+        let select=document.getElementById("luachon").value;
+        if (select==="1"){
+            document.getElementById("ketqua").innerHTML=footToMeter(number)+"meter";
+        }else {
+            document.getElementById("ketqua").innerHTML=meterToFoot(number)+"foot";
+        }
+    }
+</script>
+</body>
+</html>
